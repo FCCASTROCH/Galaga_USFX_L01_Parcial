@@ -23,10 +23,10 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 
     // Define las posiciones fijas donde aparecerán los enemigos
     //TArray<FVector> FixedSpawnLocations;
-    FixedSpawnLocations.Add(FVector(1700.0f, -1600.0f, 250.0f));  // Ejemplo de posición fija 1
-    FixedSpawnLocations.Add(FVector(1700.0f, 1600.0f, 250.0f));  // Ejemplo de posición fija 2
-    FixedSpawnLocations.Add(FVector(-1700.0f, 1600.0f, 250.0f));  // Ejemplo de posición fija 3
-    FixedSpawnLocations.Add(FVector(-1700.0f, -1600.0f, 250.0f));  // Ejemplo de posición fija 4
+    FixedSpawnLocations.Add(FVector(1700.0f, 1600.0f, 250.0f));  // Ejemplo de posición fija 1
+    FixedSpawnLocations.Add(FVector(1700.0f, 600.0f, 250.0f));  // Ejemplo de posición fija 2
+    FixedSpawnLocations.Add(FVector(1700.0f, -600.0f, 250.0f));  // Ejemplo de posición fija 3
+    FixedSpawnLocations.Add(FVector(1700.0f, -1600.0f, 250.0f));  // Ejemplo de posición fija 4
 
     // Configura un temporizador para generar enemigos cada 5 segundos
     GetWorldTimerManager().SetTimer(SpawnTimerHandle, this, &AGalaga_USFX_L01GameMode::SpawnEnemies, 5.0f, true);
@@ -51,7 +51,8 @@ void AGalaga_USFX_L01GameMode::SpawnEnemies()
             EnemyClass = ANaveEnemigaTransporte::StaticClass();
             break;
         case 2:
-            EnemyClass = ANaveEnemigaTransporte::StaticClass();
+
+           // EnemyClass = ANaveEnemigaAerea::StaticClass();
             // Puedes agregar más tipos de enemigos según sea necesario
             break;
         }
@@ -61,10 +62,7 @@ void AGalaga_USFX_L01GameMode::SpawnEnemies()
         {
             // Genera el enemigo en la posición fija actual
             AActor* NewEnemy = World->SpawnActor<AActor>(EnemyClass, SpawnLocation, FRotator::ZeroRotator);
-            if (NewEnemy)
-            {
-                // Personaliza el enemigo según sea necesario
-            }
+         
         }
     }
 }

@@ -5,13 +5,13 @@
 
 ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 
 }
 void ANaveEnemigaTransporte::Mover(float DeltaTime)
 {
-    // Se mueve un poco mas rapido en su estado de sigilo
+
      // Obtiene la posición actual del actor
     FVector PosicionActual = GetActorLocation();
     float NewY; //Declara la nueva posición en Y

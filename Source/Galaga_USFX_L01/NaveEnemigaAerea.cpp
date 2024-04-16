@@ -24,6 +24,6 @@ void ANaveEnemigaAerea::Tick(float DeltaTime)
 void ANaveEnemigaAerea::Mover(float DeltaTime)
 {
 	FVector NewLocation = GetActorLocation();
-	NewLocation += GetActorForwardVector() * velocidad * DeltaTime;
+	NewLocation += GetActorForwardVector() * 10*velocidad * DeltaTime;
 	SetActorLocation(NewLocation);
 }
